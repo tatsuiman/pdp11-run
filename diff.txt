@@ -1,0 +1,62 @@
+--- v6run.txt	2013-07-06 17:15:02.000000000 +0900
++++ myrun.txt	2013-07-06 17:18:49.000000000 +0900
+@@ -9,27 +9,35 @@
+ 000a,0000,ff5e,fffc,ffe4,ffdc,sp=ff54,pc=0214 | N:1 Z:0 V:0 C:1 : rts pc
+ 000a,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0060 | N:1 Z:0 V:0 C:1 : br
+ 000a,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=004a | N:1 Z:0 V:0 C:1 : movb *02be, r0
+-0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=004e | N:0 Z:1 V:0 C:1 : beq
+-0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0062 | N:0 Z:1 V:0 C:1 : jmp 0270
+-0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0270 | N:0 Z:1 V:0 C:1 : mov r5, r1
+-0000,ffdc,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0272 | N:1 Z:0 V:0 C:1 : mov -(r1), r4
+-0000,ffda,ff5e,fffc,0000,ffdc,sp=ff56,pc=0274 | N:0 Z:1 V:0 C:1 : mov -(r1), r3
+-0000,ffd8,ff5e,0000,0000,ffdc,sp=ff56,pc=0276 | N:0 Z:1 V:0 C:1 : mov -(r1), r2
+-0000,ffd6,0000,0000,0000,ffdc,sp=ff56,pc=0278 | N:0 Z:1 V:0 C:1 : mov r5, sp
+-0000,ffd6,0000,0000,0000,ffdc,sp=ffdc,pc=027a | N:1 Z:0 V:0 C:1 : mov (sp)+, r5
+-0000,ffd6,0000,0000,0000,ffec,sp=ffde,pc=027c | N:1 Z:0 V:0 C:1 : rts pc
+-0000,ffd6,0000,0000,0000,ffec,sp=ffe0,pc=0030 | N:1 Z:0 V:0 C:1 : tst (sp)+
+-0000,ffd6,0000,0000,0000,ffec,sp=ffe2,pc=0032 | N:0 Z:0 V:0 C:0 : jmp 0270
+-0000,ffd6,0000,0000,0000,ffec,sp=ffe2,pc=0270 | N:0 Z:0 V:0 C:0 : mov r5, r1
+-0000,ffec,0000,0000,0000,ffec,sp=ffe2,pc=0272 | N:1 Z:0 V:0 C:0 : mov -(r1), r4
+-0000,ffea,0000,0000,0000,ffec,sp=ffe2,pc=0274 | N:0 Z:1 V:0 C:0 : mov -(r1), r3
+-0000,ffe8,0000,0000,0000,ffec,sp=ffe2,pc=0276 | N:0 Z:1 V:0 C:0 : mov -(r1), r2
+-0000,ffe6,0000,0000,0000,ffec,sp=ffe2,pc=0278 | N:0 Z:1 V:0 C:0 : mov r5, sp
+-0000,ffe6,0000,0000,0000,ffec,sp=ffec,pc=027a | N:1 Z:0 V:0 C:0 : mov (sp)+, r5
+-0000,ffe6,0000,0000,0000,0000,sp=ffee,pc=027c | N:0 Z:1 V:0 C:0 : rts pc
+-0000,ffe6,0000,0000,0000,0000,sp=fff0,pc=0010 | N:0 Z:1 V:0 C:0 : mov r0, (sp)
+-0000,ffe6,0000,0000,0000,0000,sp=fff0,pc=0012 | N:0 Z:1 V:0 C:0 : jsr pc, *$0258
+-0000,ffe6,0000,0000,0000,0000,sp=ffee,pc=0258 | N:0 Z:1 V:0 C:0 : mov r5, -(sp)
+-0000,ffe6,0000,0000,0000,0000,sp=ffec,pc=025a | N:0 Z:1 V:0 C:0 : mov sp, r5
+-0000,ffe6,0000,0000,0000,ffec,sp=ffec,pc=025c | N:1 Z:0 V:0 C:0 : mov 4(r5), r0
+-0000,ffe6,0000,0000,0000,ffec,sp=ffec,pc=0260 | N:0 Z:1 V:0 C:0 : sys exit
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=004e | N:1 Z:0 V:0 C:1 : beq
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0050 | N:1 Z:0 V:0 C:1 : inc 02be
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0054 | N:0 Z:0 V:0 C:1 : cmp r0, $0025
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0058 | N:0 Z:0 V:1 C:1 : beq
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=005a | N:0 Z:0 V:1 C:1 : mov r0, (sp)
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=005c | N:0 Z:1 V:0 C:1 : jsr pc, *$01e8
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff54,pc=01e8 | N:0 Z:1 V:0 C:1 : mov r5, -(sp)
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff52,pc=01ea | N:1 Z:0 V:0 C:1 : mov sp, r5
++0000,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01ec | N:1 Z:0 V:0 C:1 : mov 02ca, r0
++02cc,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01f0 | N:0 Z:0 V:0 C:1 : bne
++02cc,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01fa | N:0 Z:0 V:0 C:1 : movb 4(r5), (r0)+
++02cd,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01fe | N:0 Z:1 V:0 C:1 : beq
++02cd,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=020e | N:0 Z:1 V:0 C:1 : mov 4(r5), r0
++0000,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=0212 | N:0 Z:1 V:0 C:1 : mov (sp)+, r5
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff54,pc=0214 | N:1 Z:0 V:0 C:1 : rts pc
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0060 | N:1 Z:0 V:0 C:1 : br
++0000,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=004a | N:1 Z:0 V:0 C:1 : movb *02be, r0
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=004e | N:0 Z:0 V:0 C:1 : beq
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0050 | N:0 Z:0 V:0 C:1 : inc 02be
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0054 | N:0 Z:0 V:0 C:1 : cmp r0, $0025
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=0058 | N:0 Z:0 V:0 C:0 : beq
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=005a | N:0 Z:0 V:0 C:0 : mov r0, (sp)
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff56,pc=005c | N:0 Z:0 V:0 C:0 : jsr pc, *$01e8
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff54,pc=01e8 | N:0 Z:0 V:0 C:0 : mov r5, -(sp)
++00ac,0000,ff5e,fffc,ffe4,ffdc,sp=ff52,pc=01ea | N:1 Z:0 V:0 C:0 : mov sp, r5
++00ac,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01ec | N:1 Z:0 V:0 C:0 : mov 02ca, r0
++02cc,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01f0 | N:0 Z:0 V:0 C:0 : bne
++02cc,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01fa | N:0 Z:0 V:0 C:0 : movb 4(r5), (r0)+
++02cd,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=01fe | N:0 Z:0 V:0 C:0 : beq
++02cd,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=0200 | N:0 Z:0 V:0 C:0 : inc 02ca
++02cd,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=0204 | N:0 Z:0 V:0 C:0 : dec 02c8
++02cd,0000,ff5e,fffc,ffe4,ff52,sp=ff52,pc=0208 | N:0 Z:1 V:0 C:0 : bgt
